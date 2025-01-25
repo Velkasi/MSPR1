@@ -1,0 +1,15 @@
+{
+    "datetime": "2025-01-25 22:45:48",
+    "hostname": "DESKTOP-MO735KL",
+    "ping_8.8.8.8": "5ms"
+}
+
+{
+    "datetime": "2025-01-25 22:45:48",
+    "hostname": "DESKTOP-MO735KL",
+    "ip": "localhost",
+    "port_scan": "135/tcp  open\n137/tcp  filtered\n445/tcp  open\n5040/tcp  open\n49664/tcp  open\n49665/tcp  open\n49666/tcp  open\n49667/tcp  open\n49668/tcp  open\n49672/tcp  open",
+    "os_scan": "Running: Microsoft Windows 10",
+    "service_scan": "135/tcp  msrpc  Microsoft\n445/tcp  microsoft-ds?  Service"
+}
+
