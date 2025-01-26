@@ -27,11 +27,11 @@ if (json_last_error() === JSON_ERROR_NONE) {
     if ($stmt) {
         // Associer les paramètres
         $stmt->bind_param(
-            "sssssss", // Types des paramètres : "s" pour string
+            "sssisss", // Types : string, string, string, integer, string, string, string
             $json_data['datetime'],
             $json_data['hostname'],
             $json_data['ip'],
-            $json_data['ping_8.8.8.8'],
+            $json_data['ping'], // Assurez-vous que `ping` est un entier dans les données JSON
             $json_data['port_scan'],
             $json_data['os_scan'],
             $json_data['service_scan']
