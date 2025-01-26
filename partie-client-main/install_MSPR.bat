@@ -12,16 +12,17 @@ echo Le chemin du fichier Nmap est: %nmapPath%
 echo Le chemin du fichier Nmap est: %npcapPath%
 
 REM Etape 1: Telechargement de python
-echo Telechargement de Python ...
+echo Telechargement de Python ... "
 powershell -Command "Invoke-WebRequest -UseBasicParsing -Uri 'https://www.python.org/ftp/python/3.9.0/python-3.9.0-amd64.exe' -OutFile '%outputPath%'"
 
 REM 1.1: Verification du telechargement
 if exist "%outputPath%" (
-    echo Le telechargement de Python est reussi !
+echo Le telechargement de Python est reussi !
 ) else (
-    echo Erreur: Le fichier n'a pas ete telecharge.
-    pause
-    exit /b
+echo Erreur: Le fichier n'a pas ete telecharge.
+pause
+exit /b
+
 )
 
 REM Etape 2: Telechargement de Nmap
@@ -30,11 +31,12 @@ powershell -Command "Invoke-WebRequest -UseBasicParsing -Uri 'https://nmap.org/d
 
 REM 2.1: Verification du telechargement Nmap
 if exist "%nmapPath%" (
-    echo Le telechargement de Nmap est reussi !
+echo Le telechargement de Nmap est reussi !
 ) else (
-    echo Erreur: Le fichier Nmap n'a pas ete telecharge.
-    pause
-    exit /b
+echo Erreur: Le fichier Nmap n'a pas ete telecharge.
+pause
+exit /b
+
 )
 
 REM Etape 3: Installation de Npcap
@@ -43,14 +45,15 @@ powershell -Command "Invoke-WebRequest -UseBasicParsing -Uri 'https://npcap.org/
 
 REM 3.1: Verification du telechargement Npcap
 if exist "%npcapPath%" (
-    echo Le telechargement de Npcap est reussi !
+echo Le telechargement de Npcap est reussi !
 ) else (
-    echo Erreur: Le fichier Npcap n'a pas ete telecharge.
-    pause
-    exit /b
+echo Erreur: Le fichier Npcap n'a pas ete telecharge.
+pause
+exit /b
+
 )
 
-REM Etape 4: Installation silencieuse de Python
+REM Etape 4: Installation silencieuse de python
 echo Installation de Python ...
 start "" "%outputPath%" /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
 
@@ -59,7 +62,7 @@ timeout /t 30
 
 REM Installation du module requests
 echo Installation du module requests...
-python -m pip install requests
+python -m pip install mysql-connector-python
 
 REM Etape 5: Installation silencieuse de Npcap
 echo Installation de Npcap ...
@@ -79,6 +82,6 @@ timeout /t 30
 
 REM Verif de version Python
 echo Verification de la version de Python
-python --version
+python -- version
 
 pause

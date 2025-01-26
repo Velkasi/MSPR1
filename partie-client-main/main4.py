@@ -17,18 +17,6 @@ def start_scan():
     
     # Ping 8.8.8.8
     ping_result = ping_8_8_8_8()
-    if ping_result:
-        # Save successful ping result to JSON
-        ping_data = {
-            "datetime": current_time,
-            "hostname": hostname,
-            "ping": ping_result
-        }
-        save_scan_results(ping_data)
-        print("Ping réussi, données sauvegardées.")
-    else:
-        messagebox.showwarning("Ping Échoué", "Le ping vers 8.8.8.8 a échoué. Aucun résultat sauvegardé.")
-        return  # Stop further scans if ping fails
 
     # Scan ports/IP
     ip = "localhost"  # Replace with the desired IP address if needed
